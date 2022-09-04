@@ -67,7 +67,7 @@ local function fireWeapon()
 	
 	-- Checks if any objects were hit between the start and end position of the Ray.
 	local hitPosition
-	if hitPosition then
+	if weaponRaycastResults then
 		hitPosition = weaponRaycastResults.Position
 		
 		-- The Instance hit will be a child of the characterModel.
@@ -86,7 +86,7 @@ local function fireWeapon()
 	-- Returns with updating the timeOfPreviousShot each time the weapon is fired.
 	timeOfPreviousShot = tick()
 	eventsFolder.LaserFired:FireServer(hitPosition) -- Calling the RemoteEvent, and firing it to the server.
-	laserModule.createLaster(tool.Handle, hitPosition)
+	laserModule.createLaser(tool.Handle, hitPosition)
 end
 
 tool.Equipped:Connect(function()
