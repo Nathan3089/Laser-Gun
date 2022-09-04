@@ -6,8 +6,8 @@ local w = game:GetService("Workspace")
 local shot_duration = 0.05
 
 -- Creating a laser beam from a start position, towards an end position.
-function LaserRenderer.createLaster(toolHandle, endPosition)
-	local startPosition = toolHandle.Position -- This makes the start position of the laster be from the handle.
+function LaserRenderer.createLaser(toolHandle, endPosition)
+	local startPosition = toolHandle.Position -- This makes the start position of the laser be from the handle.
 	
 	-- Magnitude is getting the distance between the two positions. (startPosition, endPosition)
 	local laserDistance = (startPosition - endPosition).Magnitude
@@ -16,7 +16,7 @@ function LaserRenderer.createLaster(toolHandle, endPosition)
 	-- (-lasetDistance/2) is the length from the midpoint, to the endPosition.
 	local laserCFrame = CFrame.lookAt(startPosition, endPosition) * CFrame.new	(0,0, -laserDistance / 2)
 	
-	-- Creating the laster Instance.
+	-- Creating the laser Instance.
 	local laserPart = Instance.new("Part")
 	
 	-- LaserDistance basically makes the entire beam the length of the startPosition, endPosition.
