@@ -1,0 +1,30 @@
+-- Important Tool Properties
+-- Tool Tip : Returns with text above the hotbar, whenever a mouse is hovering the said hotbar.
+-- Tool Texture : Returns with an image in the hotbar, and when left empty, the name of the Tool is displayed in the hotbar.
+
+-- Important Raycasting Functions
+-- :GetMouseLocation() : Returns with the players 2D mouse location on the screen.
+-- This function has two properties, and that's (X,Y)
+
+-- :ViewportPointToRay(X,Y) : Returns a new Raycast at the given 2D arguments.
+-- This function is passing the two MouseLocation properties.
+
+-- :Raycast(origin, direction) : Returns the distance between the start position, and the magnitude of the ray.
+-- The Vector3 (origin) is the start position, and Vector3 (direction) is the end of the raycasting magnitude.
+
+-- Raycasting: An invisible beam that fires to the position given from the 2D location, and passes information when collision is made.
+-- Can also be explained with sending out an invisibile ray from the origin point, in a specific direction with a defined length.
+
+-- Important Collision Information
+-- Instance : Returns the BasePart or Terrain that the ray intersected.
+-- Position : Returns the location of where the Ray intersected the Instance. (Usually a point directly on the surface of the Instance)
+-- Material : Returns with the material at the intersected point.
+-- Normal   : Returns the Vector of the intersected face. (Can be used to determine which way the face is pointing)
+-- Distance : Returns the dinstance between the rays origin, and the intersection point.
+
+-- Raycasting Parameters
+-- Origin : Returns the position of the Rays start position.
+-- FilterType : Determines how the FilterDecendantsInstances list will be used, depending on the RaycastFilterType.
+-- Enum.RaycastFilterType.Whitelist - Only BaseParts which will be intersepted by the Raycast.
+-- Enum.RaycastFilterType.Blacklist - Only BaseParts which will be ignored, and not intersepcted by the Raycast.
+-- IgnoreWater : Determines if Water material is considered when Raycasting, and will ignore it. (Terrian Only)
