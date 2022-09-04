@@ -1,4 +1,6 @@
 local replicatedStorage = game:GetService("ReplicatedStorage")
+local w = game:GetService("Workspace")
+
 local eventsFolder = replicatedStorage.Events
 local laser_damage = 10
 -- This is the hit proximity
@@ -29,7 +31,7 @@ local function isHitValid(playerFired, characterToDamage, hitPosition)
 		raycastParams.FilterDescendantsInstances = {playerFired.Character}
 		
 		-- Getting the result of the laser itself, and what it made contact with
-		local rayResult = game:GetService("Workspace"):Raycast(toolHandle.Position, rayDirection * rayLength, raycastParams)
+		local rayResult = w:Raycast(toolHandle.Position, rayDirection * rayLength, raycastParams)
 		
 		-- If an instance was hit that was not the character then ignore the shot
 		if rayResult and not rayResult.Instance:IsDescendantOf(characterToDamage) then
