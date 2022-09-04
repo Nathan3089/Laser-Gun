@@ -26,7 +26,7 @@ local function isHitValid(playerFired, characterToDamage, hitPosition)
 		local rayLength = (hitPosition - toolHandle.Position).Magnitude -- Gets the distance between toolHandle and hitPosition
 		local rayDirection = (hitPosition - toolHandle.Position).Unit -- Gets the direction of the rayCast, from the toolHandles position
 		local raycastParams = RaycastParams.new()
-		RaycastParams.FilderDescendantsInstances = {playerFired.Character}
+		raycastParams.FilterDescendantsInstances = {playerFired.Character}
 		
 		-- Getting the result of the laser itself, and what it made contact with
 		local rayResult = game:GetService("Workspace"):Raycast(toolHandle.Position, rayDirection * rayLength, raycastParams)
